@@ -9,7 +9,6 @@ version "2019.0"
 
 attr Doku = "data/harshbricks-albedo.png"
 attr NormalMap2 = "data/harshbricks-normal.png"
-attr Roughnes = "data/StoneGround_roughness.png"
 attr duvar_yuksekligi = rand(5,20)
 attr MetallicMap = "data/StoneGround_metallic.png"
 attr Ambient = "data/StoneGround_roughness.png"
@@ -19,9 +18,6 @@ s('.75,'1,'.75)
 center(xz)
 extrude(world.up, duvar_yuksekligi)
 comp(f){side: Facade}
-
-
-
 
 Facade-->
 	setupProjection(0, scope.xy, 3,3)
