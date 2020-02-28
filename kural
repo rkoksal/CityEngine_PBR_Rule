@@ -1,0 +1,35 @@
+/**
+ * File:    PBR.cga
+ * Created: 15 Jan 2020 08:52:44 GMT
+ * Author:  Recep
+ */
+
+version "2019.0"
+
+
+attr Doku = "data/harshbricks-albedo.png"
+attr NormalMap2 = "data/harshbricks-normal.png"
+attr Roughnes = "data/StoneGround_roughness.png"
+attr duvar_yuksekligi = rand(5,20)
+attr MetallicMap = "data/StoneGround_metallic.png"
+attr Ambient = "data/StoneGround_roughness.png"
+
+Lot -->
+s('.75,'1,'.75)
+center(xz)
+extrude(world.up, duvar_yuksekligi)
+comp(f){side: Facade}
+
+
+
+
+Facade-->
+	setupProjection(0, scope.xy, 3,3)
+	set(material.colormap,Doku)
+	set(material.normalmap,NormalMap2)
+	set(material.roughnessmap,Roughnes)
+	set(material.metallicmap,MetallicMap)
+	set(material.occlusionmap,Ambient)
+	 projectUV(0)
+	
+	
